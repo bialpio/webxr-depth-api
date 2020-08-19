@@ -26,26 +26,23 @@ const session = await navigator.xr.requestSession(“immersive-ar”, {
 2. In requestAnimationFrame callback, query XRFrame for the currently available XRDepthInformation:
 
 ```javascript
-const view = ...;  // view obtained from a viewer pose
-const depthInfo = frame.getDepthInformation(view)
+const view = ...;  // Obtained from a viewer pose.
+const depthInfo = frame.getDepthInformation(view);
+
+if(depthInfo == null) {
+  ... // Handle the case where current frame does not carry depth information.
+}
 ```
 
 3. Use the data:
-    - CPU access:
+  - CPU access:
 
 ```javascript
-if(depthInfo.timestamp != previous_timestamp) {
-  // Obtain the depth at (x, y) depth buffer coordinate:
-  const depthInMeters = depthInfo.getDepth(x, y);
-}
-
-// Store the timestamp - if the subsequent calls return depthInfo
-// with the same timestamp, then depth information has not changed
-// between frames.
-previous_timestamp = depthInfo.timestamp;
+// Obtain the depth at (x, y) depth buffer coordinate:
+const depthInMeters = depthInfo.getDepth(x, y);
 ```
 
-    - GPU access:
+ - GPU access:
 
 ```javascript
 // Assuming that the data has changed, the application could
@@ -68,7 +65,7 @@ The returned depth value is a distance from the camera plane to the observed rea
 
 ```javascript
 let depthValueInMeters = depthInfo.getDepth(x, y);
-  // where x, y - image coordinates of point a
+  // Where x, y - image coordinates of point a.
 ```
 
 ## Appendix: Proposed Web IDL
