@@ -45,15 +45,14 @@ const depthInMeters = depthInfo.getDepth(x, y);
  - GPU access:
 
 ```javascript
-// Assuming that the data has changed, the application could
-// upload the depth information for example via gl.TexImage2D call.
+// The application could upload the depth information like so:
 gl.TexImage2D(GL_TEXTURE_2D, 0, gl.LUMINANCE_ALPHA, depthInfo.width,
               depthInfo.height, 0, gl.LUMINANCE_ALPHA, gl.UNSIGNED_BYTE,
               depthInfo.data);
 
 ```
 
-The depth data available to the WebGL shaders will then be packed into red and green components of the texels. *Note*: data on the GPU is provided in millimetres.
+The depth data available to the WebGL shaders will then be packed into luminance and alpha components of the texels. *Note*: data on the GPU is provided in millimetres.
 
 ### Interpreting the data
 
