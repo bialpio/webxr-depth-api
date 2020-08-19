@@ -63,7 +63,7 @@ The depth data available to the WebGL shaders will then be packed into red and g
 The returned depth value is a distance from the camera plane to the observed real-world geometry, at a given coordinate of the depth image. See below image for more details - the depth value at point a corresponds to the distance of point A from depth image plane (specifically, it is not the length of vector aA):
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bialpio/webxr-depth-api/master/img/depth_api_data_explained.png" alt="Depth API data explanation" width="506">
+  <img src="https://raw.githubusercontent.com/bialpio/webxr-depth-api/master/img/depth_api_data_explained.png" alt="Depth API data explanation" width="557">
 </p>
 
 ```javascript
