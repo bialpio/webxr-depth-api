@@ -1,6 +1,9 @@
 # WebXR Depth API - explainer
 
 ## Introduction
+
+**Moved to https://github.com/immersive-web/depth-sensing!**
+
 As Augmented Reality becomes more common on the smartphone devices, new features are being introduced by the native APIs that enable AR-enabled experiences to access more detailed information about the environment in which the user is located. Depth API is one such feature, as it would allow authors of WebXR-powered experiences to obtain information about the distance from the user’s device to the real world geometry in the user’s environment.
 
 One example of a tech demonstration of the Depth API running on a smartphone (Android): https://play.google.com/store/apps/details?id=com.google.ar.unity.arcore_depth_lab
